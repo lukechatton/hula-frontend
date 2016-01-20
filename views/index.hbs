@@ -1,2 +1,120 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hula.fm | Community Beats</title>
+
+
+    <!--Javascript-->
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="/javascripts/util.js"></script>
+    <script src="/javascripts/background.js"></script>
+
+    <script src="/javascripts/navbar.js"></script>
+    <script src="/javascripts/app.js"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+
+    <link rel='stylesheet' href='/stylesheets/background.css' />
+    <link rel='stylesheet' href='/stylesheets/animate.css' />
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+
+
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"/>
+                    <span class="icon-bar"/>
+                    <span class="icon-bar"/>
+                </button>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <span id="rooms-nav-button">Rooms</span>
+                    </li>
+                    <li>
+                        <span id="now-playing-nav-button">Now Playing</span>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <span id="create-room-nav-button">Create Room</span>
+                    </li>
+                    <li>
+                        <span id="login-nav-button">Login</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="background-layer"></div>
+    <div id="background-shader"></div>
+    <div id="page-content">
+        <div id="room-list-tab" class="container"></div>
+
+        <div id="player-tab" class="container">
+            <div id="video-container">
+
+                <!-- Video -->
+                <div class="col-md-8 col-xs-12">
+                    <div id="player-container" class="embed-responsive embed-responsive-16by9">
+
+                        <div id="player" class="youtube-player embed-responsive-item"></div>
+
+                        <div id="time-elapsed">
+                            <div></div>
+                        </div>
+
+                        <div id="song-info-container">
+                            <lead id="song-name" style="margin-left: 5px">
+                                Nothing Without Love - Etherwood
+                            </lead>
+                        </div>
+
+                        <div id="player-options">
+                            <div id="video-toggle" onClick="togglePlayerVisibility()">
+                                <i class="fa fa-eye"></i>
+                            </div>
+                            <div id="volume-toggle">
+                                <i class="fa fa-volume-down"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Chat -->
+                <div class="col-md-4 col-xs-12">
+                    <div id="chat-container">
+                        <div class="panel panel-default panel-dark">
+                            <div class="panel-heading">Chat</div>
+                            <div class="panel-body"></div>
+                            <div class="panel-footer">
+                                <input id="chat-input" class="form-control" type="text" placeholder="Say Something Nice" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
