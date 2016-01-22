@@ -17,12 +17,16 @@ advanceBackgroundImage = function() {
     var top_img = $(".top");
     var bottom_img = $(".bottom");
 
+    var temp = 475;
+
 
     if(last_image_placed == 2) {
-        top_img.attr('style', 'background: url("http://d35y9swri9q567.cloudfront.net/background/' + getRandomInt(1, 572) + '.jpg") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;');
+        //$('body').attr('style', 'background: url("http://d35y9swri9q567.cloudfront.net/background/' + getRandomInt(1, 572) + '.jpg") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;');
+        $('body').attr('style', 'background: url("http://d35y9swri9q567.cloudfront.net/background/' + temp + '.jpg") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;');
         last_image_placed = 1;
     } else {
-        bottom_img.attr('style', 'background: url("http://d35y9swri9q567.cloudfront.net/background/' + getRandomInt(1, 572) + '.jpg") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;');
+        //$('body').attr('style', 'background: url("http://d35y9swri9q567.cloudfront.net/background/' + getRandomInt(1, 572) + '.jpg") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;');
+        $('body').attr('style', 'background: url("http://d35y9swri9q567.cloudfront.net/background/' + temp + '.jpg") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;');
         last_image_placed = 2;
     }
 

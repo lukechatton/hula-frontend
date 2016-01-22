@@ -1,0 +1,5 @@
+.spa-link,
+.spa-link:hover,
+.spa-link:focus {
+    cursor: pointer;
+}

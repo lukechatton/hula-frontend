@@ -1,25 +1,32 @@
 $(document).ready(function() {
-    $('#rooms-nav-button').click(function() {
+    $('.spa-link-rooms').click(function() {
         console.log('switching to rooms tab');
         switchTab('rooms');
     });
 
-    $('#brand-nav-button').click(function() {
+    $('.spa-link-brand').click(function() {
         console.log('switching to rooms tab');
         switchTab('rooms');
     });
 
-    $('#now-playing-nav-button').click(function() {
+    $('.spa-link-now-playing').click(function() {
         console.log('switching to player tab');
         switchTab('player');
     });
 
-    $('#login-nav-button').click(function() {
-        console.log('switching to ldogin tab');
-        switchTab('login');
+    $('.spa-link-login').click(function() {
+        console.log('opening login modal');
+        $('#signup-modal').modal('hide');
+        $('#login-modal').modal('show');
     });
 
-    $('#create-room-nav-button').click(function() {
+    $('.spa-link-signup').click(function() {
+        console.log('opening signup modal');
+        $('#login-modal').modal('hide');
+        $('#signup-modal').modal('show');
+    });
+
+    $('.spa-link-create-room').click(function() {
         console.log('switching to create_room tab');
         switchTab('create-room');
     });

@@ -8,6 +8,8 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+    <script src="/javascripts/auth.js"></script>
+
     <script src="/javascripts/util.js"></script>
     <script src="/javascripts/background.js"></script>
 
@@ -20,7 +22,10 @@
 
     <link rel='stylesheet' href='/stylesheets/background.css' />
     <link rel='stylesheet' href='/stylesheets/animate.css' />
+    <link rel='stylesheet' href='/stylesheets/login.css' />
     <link rel='stylesheet' href='/stylesheets/main.css' />
+
+    <link rel='stylesheet' href='/stylesheets/spa.css' />
 
 
 </head>
@@ -42,19 +47,19 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <span id="rooms-nav-button">Rooms</span>
+                        <span id="rooms-nav-button" class="spa-link-rooms">Rooms</span>
                     </li>
                     <li>
-                        <span id="now-playing-nav-button">Now Playing</span>
+                        <span id="now-playing-nav-button" class="spa-link-now-playing">Now Playing</span>
                     </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <span id="create-room-nav-button">Create Room</span>
+                        <span id="create-room-nav-button" class="spa-link-create-room">Create Room</span>
                     </li>
                     <li>
-                        <span id="login-nav-button">Login</span>
+                        <span id="login-nav-button" class="spa-link-login">Login</span>
                     </li>
                 </ul>
             </div>
@@ -67,6 +72,8 @@
     <div id="page-content">
         <div id="room-list-tab" class="container"></div>
 
+
+        <!-- Player Tab -->
         <div id="player-tab" class="container">
             <div id="video-container">
 
@@ -115,6 +122,82 @@
 
             </div>
         </div>
+
+
+        <!-- Login Modal -->
+        <div id="login-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Login to Hula.fm</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-signin">
+                            <form action="/login" method="post" role="form">
+                                <h3 class="text-center">Enter your info</h3>
+                                <input type="email" id="input-email" class="form-control form-signin-top" placeholder="Email or username" required autofocus>
+                                <input type="password" id="input-password" class="form-control form-signin-bottom" placeholder="Password" required>
+
+                                <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+                            </form>
+
+                            <div class="text-center" style="margin-top: 18px">
+                                <a id="signup-nav-button" class="spa-link spa-link-signup">Need an Account?</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signup Modal -->
+        <div id="signup-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Join the Hula.fm Community</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-signin">
+                            <form action="/signup" method="post" role="form">
+                                <h3 class="text-center">Create your Account</h3>
+                                <input type="email" id="input-username" class="form-control form-signin-top" placeholder="Username" required autofocus>
+                                <input type="email" id="input-email" class="form-control form-signin-middle" placeholder="Email" required autofocus>
+                                <input type="password" id="input-password" class="form-control form-signin-bottom" placeholder="Password" required>
+
+                                <button class="btn btn-primary btn-block" type="submit">Sign me up!</button>
+
+
+                            </form>
+
+                            <div class="text-center" style="margin-top: 18px">
+                                <a class="spa-link spa-link-login">Already have an account?</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    {{#if req.user}}
+        <div id="t1" style="visibility: hidden">{{req.user.username}}</div>
+        <div id="t2" style="visibility: hidden">{{req.user.password}}</div>
+    {{else}}
+        <div id="t1" style="visibility: hidden"></div>
+        <div id="t2" style="visibility: hidden"></div>
+    {{/if}}
 </body>
 </html>

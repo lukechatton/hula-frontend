@@ -13,7 +13,7 @@ $(document).ready(function() {
     if($('#room-list-tab').length) {
         var i = 0;
         while(i < 5) {
-            $('#room-list-tab').append('<div class="col-xs-18 col-sm-4"><div class="panel panel-default panel-dark room-card"><div class="panel-heading"><span class="room-name">' + 'Chill Room' + '</span><span class="room-users-wrapper pull-right"><span class="room-users">' + '27' + '</span><i class="fa fa-users"></i></span></div><div class="panel-body"><img src="http://i.ytimg.com/vi/' + 'HvhMDEunq3E' + '/0.jpg"></div><div class="panel-footer"><div class="row"><div class="col-md-8"><span class="song-name">' + 'Example' + '</span><span class="song-artist">' + 'Etherwood' + '</span></div><div class="col-md-4"><button class="btn btn-info" onclick="switchTab(\'' + 'player' + '\')">join</button></div></div></div></div></div>');
+            $('#room-list-tab').append('<div class="col-xs-18 col-sm-4"><div class="panel panel-default panel-dark room-card"><div class="panel-heading"><span class="room-name">' + 'Chill Room' + '</span><span class="room-users-wrapper pull-right"><span class="room-users">' + '27' + '</span><i class="fa fa-users"></i></span></div><div class="panel-body"><img src="http://i.ytimg.com/vi/' + 'SDTZ7iX4vTQ' + '/0.jpg"></div><div class="panel-footer"><div class="row"><div class="col-md-8"><span class="song-name">' + 'Example' + '</span><span class="song-artist">' + 'Etherwood' + '</span></div><div class="col-md-4"><button class="btn btn-info" onclick="switchTab(\'' + 'player' + '\')">join</button></div></div></div></div></div>');
             i++;
         }
 
@@ -45,26 +45,26 @@ switchTab = function(destination) {
         case 'rooms':
             refreshRoomList();
             $('#room-list-tab').removeAttr('hidden');
-            $('#room-list-tab').addClass('animated fadeInUp');
+            $('#room-list-tab').addClass('animated fadeIn');
             break;
 
         case 'create-room':
             $('#create-room-tab').removeAttr('hidden');
-            $('#create-room-tab').addClass('animated fadeInUp');
+            $('#create-room-tab').addClass('animated fadeIn');
 
         case 'login':
             $('#login-tab').removeAttr('hidden');
-            $('#login-tab').addClass('animated fadeInUp');
+            $('#login-tab').addClass('animated fadeIn');
             break;
 
         case 'register':
             $('#register-tab').removeAttr('hidden');
-            $('#register-tab').addClass('animated fadeInUp');
+            $('#register-tab').addClass('animated fadeIn');
             break;
 
         case 'player':
             $('#player-tab').removeAttr('hidden');
-            $('#player-tab').addClass('animated fadeInUp');
+            $('#player-tab').addClass('animated fadeIn');
             break;
     }
 }
@@ -107,7 +107,7 @@ function loadVideoById(id, time) {
             // height: '390',
             // width: '100%',
             // videoId: id,
-            videoId: 'SDTZ7iX4vTQ',
+            videoId: 'scU4M1YNcjw',
             playerVars: {
                 autoplay: 1,
                 border: 0,
@@ -137,7 +137,7 @@ function loadVideoById(id, time) {
     } else {
         // player.loadVideoById({'videoId': id, 'suggestedQuality': 'large'});
         // player.seekTo(time);
-        player.loadVideoById({'videoId': 'HvhMDEunq3E', 'suggestedQuality': 'large'});
+        player.loadVideoById({'videoId': 'scU4M1YNcjw', 'suggestedQuality': 'large'});
         player.seekTo(0);
     }
 }
