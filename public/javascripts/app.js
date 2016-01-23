@@ -35,40 +35,6 @@ refreshRoomList = function() {
 
 }
 
-switchTab = function(destination) {
-    $('#room-list-tab').attr('hidden', 'hidden');
-    $('#login-tab').attr('hidden', 'hidden');
-    $('#player-tab').attr('hidden', 'hidden');
-    $('#create-room-tab').attr('hidden', 'hidden');
-
-    switch(destination) {
-        case 'rooms':
-            refreshRoomList();
-            $('#room-list-tab').removeAttr('hidden');
-            $('#room-list-tab').addClass('animated fadeIn');
-            break;
-
-        case 'create-room':
-            $('#create-room-tab').removeAttr('hidden');
-            $('#create-room-tab').addClass('animated fadeIn');
-
-        case 'login':
-            $('#login-tab').removeAttr('hidden');
-            $('#login-tab').addClass('animated fadeIn');
-            break;
-
-        case 'register':
-            $('#register-tab').removeAttr('hidden');
-            $('#register-tab').addClass('animated fadeIn');
-            break;
-
-        case 'player':
-            $('#player-tab').removeAttr('hidden');
-            $('#player-tab').addClass('animated fadeIn');
-            break;
-    }
-}
-
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 
@@ -107,7 +73,7 @@ function loadVideoById(id, time) {
             // height: '390',
             // width: '100%',
             // videoId: id,
-            videoId: 'scU4M1YNcjw',
+            videoId: '0XqneRhU_ns',
             playerVars: {
                 autoplay: 1,
                 border: 0,
@@ -137,7 +103,7 @@ function loadVideoById(id, time) {
     } else {
         // player.loadVideoById({'videoId': id, 'suggestedQuality': 'large'});
         // player.seekTo(time);
-        player.loadVideoById({'videoId': 'scU4M1YNcjw', 'suggestedQuality': 'large'});
+        player.loadVideoById({'videoId': '0XqneRhU_ns', 'suggestedQuality': 'large'});
         player.seekTo(0);
     }
 }
