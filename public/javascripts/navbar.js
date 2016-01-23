@@ -20,6 +20,10 @@ $(document).ready(function() {
         $('#login-modal').modal('show');
     });
 
+    $('.spa-link-logout').click(function() {
+        location.href= '/logout';
+    });
+
     $('.spa-link-signup').click(function() {
         console.log('opening signup modal');
         $('#login-modal').modal('hide');

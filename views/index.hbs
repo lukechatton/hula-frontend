@@ -58,9 +58,19 @@
                     <li>
                         <span id="create-room-nav-button" class="spa-link-create-room">Create Room</span>
                     </li>
-                    <li>
-                        <span id="login-nav-button" class="spa-link-login">Login</span>
-                    </li>
+
+                    {{#if user}}
+                        <li>
+                            <span>{{user.username}}</span>
+                        </li>
+                        <li>
+                            <span id="login-nav-button" class="spa-link-logout">Logout</span>
+                        </li>
+                    {{else}}
+                        <li>
+                            <span id="login-nav-button" class="spa-link-login">Login</span>
+                        </li>
+                    {{/if}}
                 </ul>
             </div>
 
@@ -134,10 +144,10 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-signin">
-                            <form action="/login" method="post" role="form">
+                            <form action="/login" method="post" role="form" onsubmit="return submitLoginForm();">
                                 <h3 class="text-center">Enter your info</h3>
-                                <input type="email" id="input-email" class="form-control form-signin-top" placeholder="Email or username" required autofocus>
-                                <input type="password" id="input-password" class="form-control form-signin-bottom" placeholder="Password" required>
+                                <input type="username" id="login-input-username" class="form-control form-signin-top" placeholder="Email or username" required autofocus>
+                                <input type="password" id="login-input-password" class="form-control form-signin-bottom" placeholder="Password" required>
 
                                 <button class="btn btn-primary btn-block" type="submit">Sign in</button>
                             </form>
@@ -166,11 +176,11 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-signin">
-                            <form action="/signup" method="post" role="form">
+                            <form action="/signup" method="post" role="form" onsubmit="return submitSignupForm();">
                                 <h3 class="text-center">Create your Account</h3>
-                                <input type="email" id="input-username" class="form-control form-signin-top" placeholder="Username" required autofocus>
-                                <input type="email" id="input-email" class="form-control form-signin-middle" placeholder="Email" required autofocus>
-                                <input type="password" id="input-password" class="form-control form-signin-bottom" placeholder="Password" required>
+                                <input type="username" id="signup-input-username" class="form-control form-signin-top" placeholder="Username" required autofocus>
+                                <input type="email" id="signup-input-email" class="form-control form-signin-middle" placeholder="Email" required autofocus>
+                                <input type="password" id="signup-input-password" class="form-control form-signin-bottom" placeholder="Password" required>
 
                                 <button class="btn btn-primary btn-block" type="submit">Sign me up!</button>
 
@@ -192,9 +202,9 @@
         </div>
     </div>
 
-    {{#if req.user}}
-        <div id="t1" style="visibility: hidden">{{req.user.username}}</div>
-        <div id="t2" style="visibility: hidden">{{req.user.password}}</div>
+    {{#if user}}
+        <div id="t1" style="visibility: hidden">{{user.username}}</div>
+        <div id="t2" style="visibility: hidden">{{user.password}}</div>
     {{else}}
         <div id="t1" style="visibility: hidden"></div>
         <div id="t2" style="visibility: hidden"></div>
